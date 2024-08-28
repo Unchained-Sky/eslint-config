@@ -58,7 +58,8 @@ const typescriptConfig = {
 			args: 'after-used',
 			argsIgnorePattern: '^_'
 		}],
-		'@typescript-eslint/no-confusing-void-expression': 'off'
+		'@typescript-eslint/no-confusing-void-expression': 'off',
+		'@typescript-eslint/restrict-template-expressions': ['error', { allowNumber: true }]
 	}
 }
 
@@ -83,17 +84,13 @@ const reactConfig = {
 		...reactHooks.configs.recommended.rules,
 		...react.configs.recommended.rules,
 		...react.configs['jsx-runtime'].rules,
-		'react/self-closing-comp': [
-			'warn',
-			{
-				component: true,
-				html: true
-			}
-		],
-		'react-refresh/only-export-components': [
-			'warn',
-			{ allowConstantExport: true }
-		]
+		'react/self-closing-comp': ['warn', {
+			component: true,
+			html: true
+		}],
+		'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+		'react/jsx-max-props-per-line': [1, { maximum: 1, when: 'multiline' }],
+		'react/jsx-first-prop-new-line': [1, 'multiline']
 	}
 }
 
