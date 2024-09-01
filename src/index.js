@@ -34,7 +34,8 @@ const allConfig = {
 		'@stylistic/jsx-quotes': ['warn', 'prefer-single'],
 		'@stylistic/arrow-parens': ['warn', 'as-needed'],
 		'@stylistic/jsx-indent-props': 'off',
-		'@stylistic/brace-style': ['warn', '1tbs']
+		'@stylistic/brace-style': ['warn', '1tbs'],
+		'@stylistic/indent-binary-ops': ['warn', 'tab']
 	}
 }
 
