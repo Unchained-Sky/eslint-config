@@ -1,6 +1,7 @@
 import js from '@eslint/js'
 import stylistic from '@stylistic/eslint-plugin'
 import tanstackQuery from '@tanstack/eslint-plugin-query'
+import jsxA11y from 'eslint-plugin-jsx-a11y'
 import react from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
@@ -67,7 +68,8 @@ const typescriptConfig = {
 /** @type {Config} */
 const reactConfig = {
 	extends: [
-		...tanstackQuery.configs['flat/recommended']
+		...tanstackQuery.configs['flat/recommended'],
+		jsxA11y.flatConfigs.recommended
 	],
 	settings: {
 		react: {
@@ -76,6 +78,13 @@ const reactConfig = {
 	},
 	files: ['**/*.{jsx,tsx}'],
 	ignores,
+	languageOptions: {
+		parserOptions: {
+			ecmaFeatures: {
+				jsx: true
+			}
+		}
+	},
 	plugins: {
 		'react-hooks': reactHooks,
 		'react-refresh': reactRefresh,
