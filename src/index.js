@@ -98,7 +98,10 @@ const reactConfig = {
 			component: true,
 			html: true
 		}],
-		'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+		'react-refresh/only-export-components': ['warn', {
+			allowConstantExport: true,
+			allowExportNames: ['meta', 'links', 'headers', 'loader', 'action']
+		}],
 		'react/jsx-max-props-per-line': [1, { maximum: 1, when: 'multiline' }],
 		'react/jsx-first-prop-new-line': [1, 'multiline']
 	}
