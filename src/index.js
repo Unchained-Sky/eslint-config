@@ -61,7 +61,9 @@ const typescriptConfig = {
 			argsIgnorePattern: '^_'
 		}],
 		'@typescript-eslint/no-confusing-void-expression': 'off',
-		'@typescript-eslint/restrict-template-expressions': ['error', { allowNumber: true }]
+		'@typescript-eslint/restrict-template-expressions': ['error', { allowNumber: true }],
+		'no-throw-literal': 'off',
+		'@typescript-eslint/only-throw-error': 'off'
 	}
 }
 
