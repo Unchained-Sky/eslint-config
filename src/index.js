@@ -90,6 +90,7 @@ const reactConfig = {
 	plugins: {
 		'react-hooks': reactHooks,
 		'react-refresh': reactRefresh,
+		'@stylistic': stylistic,
 		react
 	},
 	rules: {
@@ -105,7 +106,8 @@ const reactConfig = {
 			allowExportNames: ['meta', 'links', 'headers', 'loader', 'action']
 		}],
 		'react/jsx-max-props-per-line': [1, { maximum: 1, when: 'multiline' }],
-		'react/jsx-first-prop-new-line': [1, 'multiline']
+		'react/jsx-first-prop-new-line': [1, 'multiline'],
+		'@stylistic/jsx-one-expression-per-line': ['error', { allow: 'non-jsx' }]
 	}
 }
 
