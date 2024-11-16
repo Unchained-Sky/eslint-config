@@ -9,10 +9,11 @@ import globals from 'globals'
 import tseslint from 'typescript-eslint'
 
 const ignores = [
-	'**/dist',
-	'**/out',
-	'**/build',
-	'**/.sst'
+	'dist/*',
+	'out/*',
+	'build/*',
+	'.sst/*',
+	'**/*.d.ts'
 ]
 
 /** @typedef {import('eslint').Linter.Config} Config */
