@@ -1,6 +1,7 @@
 import js from '@eslint/js'
 import stylistic from '@stylistic/eslint-plugin'
 import tanstackQuery from '@tanstack/eslint-plugin-query'
+import tanstackRouter from '@tanstack/eslint-plugin-router'
 import jsxA11y from 'eslint-plugin-jsx-a11y'
 import react from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
@@ -76,7 +77,6 @@ const typescriptConfig = {
 /** @type {Config} */
 const reactConfig = {
 	extends: [
-		...tanstackQuery.configs['flat/recommended'],
 		jsxA11y.flatConfigs.recommended
 	],
 	settings: {
@@ -117,11 +117,22 @@ const reactConfig = {
 	}
 }
 
+/** @type {Config} */
+const tanstackConfig = {
+	extends: [
+		...tanstackQuery.configs['flat/recommended'],
+		...tanstackRouter.configs['flat/recommended']
+	],
+	files: ['**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts}'],
+	ignores
+}
+
 /** @type {Config[]} */
 const eslintConfig = tseslint.config(
 	allConfig,
 	typescriptConfig,
-	reactConfig
+	reactConfig,
+	tanstackConfig
 )
 
 export default eslintConfig
