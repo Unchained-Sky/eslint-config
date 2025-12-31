@@ -1,6 +1,6 @@
 {
   "name": "@unchainedsky/eslint-config",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "ESLint config",
   "keywords": [
     "eslint",
@@ -21,7 +21,8 @@
   "homepage": "https://github.com/Unchained-Sky/eslint-config#readme",
   "scripts": {
     "build": "tsc",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "test": "eslint --cache --cache-location ./node_modules/.cache/eslint ."
   },
   "dependencies": {
     "@eslint/js": "^9.39.0",

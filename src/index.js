@@ -12,9 +12,11 @@ import tseslint from 'typescript-eslint'
 const ignores = [
 	'dist/*',
 	'out/*',
+	'.output/*',
 	'build/*',
 	'.sst/*',
-	'**/*.d.ts'
+	'**/*.d.ts',
+	'.nitro/*'
 ]
 
 /** @typedef {import('eslint').Linter.Config} Config */
@@ -34,7 +36,7 @@ const allConfig = {
 		'@stylistic': stylistic
 	},
 	rules: {
-		...stylistic.configs['recommended-flat'].rules,
+		...stylistic.configs.recommended.rules,
 		'@stylistic/indent': ['warn', 'tab'],
 		'@stylistic/no-tabs': 'off',
 		'@stylistic/comma-dangle': ['warn', 'never'],
@@ -100,9 +102,9 @@ const reactConfig = {
 		react
 	},
 	rules: {
-		...reactHooks.configs.recommended.rules,
-		...react.configs.recommended.rules,
-		...react.configs['jsx-runtime'].rules,
+		...reactHooks.configs.flat.recommended.rules,
+		...react.configs.flat.recommended.rules,
+		...react.configs.flat['jsx-runtime'].rules,
 		'react/self-closing-comp': ['warn', {
 			component: true,
 			html: true
